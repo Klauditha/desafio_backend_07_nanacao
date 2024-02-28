@@ -19,15 +19,13 @@ describe('Operaciones CRUD de cafes', () => {
   });
 
   it('Agregar nuevo cafe y obtener un 201', async () => {
-    const jwtToken = 'token';
-    const cafe = {
+    const nuevoCafe = {
       id: 5,
       nombre: 'Cafe descafeinado',
     };
     const response = await request(server)
       .post('/cafes')
-      .set('Authorization', jwtToken)
-      .send(cafe);
+      .send(nuevoCafe);
     expect(response.status).toBe(201);
   });
 
