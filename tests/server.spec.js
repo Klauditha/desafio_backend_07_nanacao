@@ -14,8 +14,7 @@ describe('Operaciones CRUD de cafes', () => {
     const idCafe = 5;
     const response = await request(server)
       .delete(`/cafes/${idCafe}`)
-      .set('Authorization', jwt)
-      .send();
+      .set('Authorization', jwt);
     expect(response.status).toBe(404);
   });
 
@@ -41,8 +40,7 @@ describe('Operaciones CRUD de cafes', () => {
     if (payload.id !== idCafe) {
       const response = await request(server)
         .put(`/cafes/${idCafe}`)
-        .set('Authorization', jwtToken)
-        .send();
+        .set('Authorization', jwtToken);
       expect(response.status).toBe(400);
     }
   });
